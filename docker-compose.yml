@@ -9,6 +9,8 @@ services:
     networks:
       - proxy
       - internal
+    ports:
+      - 8080:8080
     deploy:
       labels:
         # traefik
