@@ -10,17 +10,17 @@ services:
       - proxy
       - internal
     ports:
-      - 8080:8080
-    deploy:
-      labels:
-        # traefik
-        - traefik.enable=true
+      - 8080:80
+    
+    labels:
+      # traefik
+      - traefik.enable=true
 
         # traefikv2
-        - "traefik.http.routers.keycloak.rule=Host(`keycloak.sicsogt-mada.ovh`)"
-        - "traefik.http.routers.keycloak.entrypoints=https"
-        - "traefik.http.routers.keycloak.tls=true"
-        - "traefik.http.services.keycloak.loadbalancer.server.port=8080"
+      - "traefik.http.routers.keycloak.rule=Host(`keycloak.sicsogt-mada.ovh`)"
+      - "traefik.http.routers.keycloak.entrypoints=https"
+      - "traefik.http.routers.keycloak.tls=true"
+      - "traefik.http.services.keycloak.loadbalancer.server.port=8080"
 
 
   keycloak-db:
