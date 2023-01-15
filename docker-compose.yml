@@ -13,7 +13,7 @@ services:
       labels:
         # traefik
         - traefik.enable=true
-        - traefik.docker.network=traefik_public
+        - traefik.docker.network=proxy
 
         # traefikv2
         - "traefik.http.routers.keycloak.rule=Host(`keycloak.sicsogt-mada.ovh`)"
